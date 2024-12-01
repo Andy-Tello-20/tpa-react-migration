@@ -1,0 +1,41 @@
+
+footer {
+    height: 10vh;
+    background: #2f2f2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #fff;
+    text-align: center;
+}
+
+
+
+.inError {
+    border: 1px solid #F06292;
+    background: #fdefef;
+}
+
+.inError:focus {
+    box-shadow: 0 0 0 .25rem #ffc6c6;
+    border-color: #F06292;
+}
+
+.select-container.inError{
+    border-radius: 5px;
+}
+
+.select-container.inError span.select2-selection.select2-selection--single {
+    background: #fdefef;
+}
+
+
+
+.select-container.inError span.select2-selection.select2-selection--multiple {
+    background: #fdefef;
+}

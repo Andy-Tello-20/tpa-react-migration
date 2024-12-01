@@ -1,0 +1,148 @@
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background-image: url('../../../../../src/assets/img/caratula-fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.logo-login {
+    margin-bottom: 1rem;
+}
+
+
+.logo-login img {
+    margin-top: 1rem;
+    width: 7rem;
+    object-fit: cover;
+
+}
+
+.form-login {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    padding: 20px 25px;
+    box-shadow: 0 5px 10px rgba(71, 3, 6, 0.7);
+    width: 400px;
+    height: 90%;
+    max-height: 600px;
+    border-radius: 10px;
+}
+
+.form-login .title {
+    color: #504d4d;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 5px;
+
+}
+
+.client-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.client-info label {
+
+    color: #070707
+}
+
+
+
+.client-info input {
+    outline: none;
+    border: none;
+    color: #252525;
+    border-bottom: solid 1px #afaeae;
+    padding: 0 5px;
+    font-size: 15px;
+    width: 100%;
+    padding: 10px;
+
+}
+
+.client-info :nth-child(2) {
+    margin-bottom: 2rem;
+}
+
+.client-info span {
+    display: block;
+    text-align: left;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    color: #252525;
+}
+
+.client-info input::placeholder {
+    color: rgba(37, 37, 37, 0.5);
+}
+
+
+form .link {
+    color: #939393;
+    margin-bottom: 15px;
+}
+
+.span-eye{
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    position: absolute;
+    top: 22%;
+    left: 86%;
+
+}
+
+.bi-class-eye{
+    color: #6e6e6e;
+    font-size: 20px;
+}
+
+
+
+
+
+/* .inError {
+    border: 1px solid #F06292;
+    background: #fdefef;
+}
+
+.inError:focus {
+    box-shadow: 0 0 0 .25rem #ffc6c6;
+    border-color: #F06292;
+} */
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.classModelDialog {
+    top: 72px;
+    left: -4%;
+}
+
+
+
+
+.button {
+    color: #fff;
+    border: none;
+    background: #9BC25F;
+    padding: 6px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 0 auto;
+    border-radius: 20px;
+    width: 150px;
+}
