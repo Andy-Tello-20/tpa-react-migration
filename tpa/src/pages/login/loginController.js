@@ -1,9 +1,11 @@
 
 import { useForm } from 'react-hook-form';
 import { loginAuth } from './authServices';
+import { useState } from 'react';
 
 export const useSubmitControler = () => {
 
+    const [message, setMessage] = useState('')
     const { register, handleSubmit } = useForm()
 
     const onSubmit = async (data) => {
@@ -13,6 +15,7 @@ export const useSubmitControler = () => {
             const result = await loginAuth(data)
 
             console.log('resultado ', result)
+            setMessage('Datos Enviados')
 
         } catch (error) {
             console.error(error);
@@ -20,5 +23,5 @@ export const useSubmitControler = () => {
         }
     }
 
-    return { register, handleSubmit, onSubmit }
+    return { register, handleSubmit, onSubmit, message }
 }

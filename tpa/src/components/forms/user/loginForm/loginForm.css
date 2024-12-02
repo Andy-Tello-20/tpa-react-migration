@@ -94,11 +94,12 @@ form .link {
 }
 
 .span-eye{
+    
     display: flex;
     align-items: center;
     padding: .375rem .75rem;
     position: absolute;
-    top: 22%;
+    top: 18%;
     left: 86%;
 
 }
