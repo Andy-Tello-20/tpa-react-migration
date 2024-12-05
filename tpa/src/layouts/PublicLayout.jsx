@@ -1,13 +1,14 @@
 import React from 'react'
 import { Footer } from '../components/common/Footer'
-import { Login } from '../components/user/auth/login/pages/Login'
-
+import { Outlet } from 'react-router-dom';
 
 export const PublicLayout = () => {
   return (
     <>
 
-      <Login />
+      <Outlet /> {/* 👉 Renderiza las rutas hijas (Login, Register, etc)*/}
+
+     
       <Footer />
     </>
   )

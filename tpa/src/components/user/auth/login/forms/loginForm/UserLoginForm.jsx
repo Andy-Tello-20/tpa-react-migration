@@ -18,6 +18,10 @@ export const UserLoginForm = () => {
     const [showModalRecovery, setshowModalRecovery] = useState(false);
     const [showModalUnlockUser, setshowModalUnlockUser] = useState(false);
 
+
+  
+
+
     //!👉 Función para cambiar el estado del modal
     const toggleModal = () => {
       setshowModalRecovery(!showModalRecovery);
@@ -54,7 +58,7 @@ export const UserLoginForm = () => {
 
 
 
-                <div className="input-group mb-3">
+                <div className="input-group">
 
 
                     <div className="form-floating flex-grow-1">

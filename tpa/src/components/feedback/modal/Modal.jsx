@@ -26,7 +26,7 @@ const ReactBootstrapModal = ({ showModalRecovery,showModalUnlockUser, toggleModa
                     </FloatingLabel>
                     
                 </Modal.Body>
-                <Modal.Footer footerClassName='footerClass'>
+                <Modal.Footer className='footerClass'>
                     <Button className='button' variant="secondary" onClick={toggleModal}>
                         {textButton}
                     </Button>

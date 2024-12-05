@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     height: 90vh;
-    background-image: url('../../../../../../assets/img/caratula-fondo.jpg');
+    background-image: var(--background-image);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -90,7 +90,7 @@
 
 form .link {
     color: #939393;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     /* font-size: 14px; */
 }
 

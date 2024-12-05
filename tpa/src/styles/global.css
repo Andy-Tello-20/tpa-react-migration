@@ -1,0 +1,320 @@
+/*---MEDIA QUERY--- */
+
+
+@media screen and (max-width: 800px) {
+
+
+    /* ---Formulario Interes--- */
+
+    .form-interest {
+        width: 90%;
+    }
+
+    /* .dni {
+        flex-direction: column;
+    } */
+
+    .nro {
+        width: 70%;
+    }
+
+    .selected1 {
+        width: 30%;
+    }
+
+
+
+
+
+
+    /* ---header--- */
+
+    .header-nav {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+
+
+    .main-container .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin-bottom: 2rem;
+    }
+
+
+
+    /* ---Video--- */
+
+
+    .breadcrumb {
+        font-size: 0.9rem;
+        margin: 1rem 0 1rem 0.3rem;
+    }
+
+    .video.title {
+        margin-bottom: 0;
+    }
+
+    .h1-style {
+        margin: 1rem 0;
+        font-size: 1rem;
+        padding: 0 0.5rem;
+
+    }
+
+    .player-container {
+        height: auto;
+        gap: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        margin-bottom: 0px;
+        position: sticky;
+        top: 59.65px;
+        padding: 0px;
+        margin-bottom: 4rem;
+        z-index: 1;
+
+
+    }
+
+    .vPlayer-margin {
+        margin-bottom: 1rem;
+    }
+
+    .video-player {
+        width: 100%;
+        height: 200px;
+        /* margin-bottom: 1rem; */
+
+
+    }
+
+    .ivc-hidden {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    .classModelDialog2 {
+        top: 327px
+    }
+
+    .contentWidht2 {
+        width: auto;
+        height: calc(100vh - 327px);
+    }
+
+    .info-video-container {
+        height: 75px;
+        transition: height 0.5s ease;
+        padding: 0 0.5rem;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 15px;
+        margin-top: 0px;
+        background: #f3f0f0;
+    }
+
+    .description-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .description-video {
+        margin-right: 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 60%;
+    }
+
+    .info-video-container p {
+        font-size: 14px;
+        margin: 0
+    }
+
+    .ver-mas {
+        color: #67328e
+    }
+
+    .span-ver-mas {
+        display: block;
+        margin-left: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .bi-class-info-empty {
+        display: block;
+    }
+
+    .oculto {
+
+        height: 0
+    }
+
+    .oculto2 {
+        height: 0;
+        padding-bottom: 0;
+        /* display: none; */
+    }
+
+
+
+    .info-controler {
+        display: block;
+    }
+
+    .box .box-img {
+
+        border-radius: 0px;
+    }
+
+    .mc-padding {
+        padding: 0px 0%;
+        background: #ffff;
+    }
+
+    .hr-line {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+
+
+    /* ---Formulario Interes--- */
+    .form-interest,
+    .form-inscripcion {
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        border-radius: 0px;
+    }
+
+
+
+    .address-1-container,
+    .address-2-container {
+
+        gap: 0px;
+    }
+
+    .dni {
+        flex-direction: column;
+    }
+
+    .nro,
+    .selected1 {
+        width: 100%;
+    }
+
+    .form-interest {
+        padding: 20px 20px;
+    }
+
+    .button-send {
+        width: 100%;
+        height: 56px;
+    }
+
+    .back {
+        display: flex;
+    }
+
+    .small-cancelar {
+        display: none;
+    }
+
+
+    /* ---------------------------- */
+
+
+
+    .main-container .box-container .box:hover {
+        box-shadow: none;
+        transform: none;
+    }
+
+
+
+    /* ---------------------------------- */
+
+    .section-info{
+        border-radius: 0px;
+        height: 100%;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .bi-class-okay {
+        font-size: 8rem !important;
+    }
+
+    .smCompleted{
+        width: 100%;
+        }
+}
+
+
+
+@media screen and (max-width: 450px) {
+
+    /* ---VIDEO--- */
+    .classModelDialog2 {
+        top: 323px
+    }
+
+    .contentWidht2 {
+        width: auto;
+        height: calc(100vh - 323px);
+    }
+
+    .breadcrumb {
+        font-size: 1rem;
+    }
+
+    /* ---SELECTED--- */
+
+    .selected {
+        margin: 0 0.2rem
+    }
+
+    /* ---HEADER--- */
+
+    .user-nav {
+        display: flex;
+        padding: 0.8rem 5%;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .classModelDialog {
+        top: 65px;
+    }
+
+
+    /* ---LOGIN--- */
+
+    .form-container form {
+        width: 90%;
+    }
+
+    .main-container .box-container {
+        margin-top: -55px;
+        grid-template-columns: repeat(auto-fit, minmax(80%, 1fr));
+    }
+
+    /* ---------------------------------- */
+    .bi-class-okay {
+        font-size: 7rem !important;
+    }
+
+    
+
+}
