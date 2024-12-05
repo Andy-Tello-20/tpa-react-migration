@@ -1,10 +1,10 @@
-import { AuthLayout } from "./layouts/AuthLayout";
+import { PublicLayout } from "./layouts/PublicLayout";
 
 
 
 function App() {
   return (
-    <AuthLayout/>
+    <PublicLayout/>
   );
 }
 

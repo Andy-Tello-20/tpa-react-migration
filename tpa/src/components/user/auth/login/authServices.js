@@ -2,13 +2,16 @@ import axios from 'axios'
 
 export const loginAuth = async (data) => {
 
+  const baseUrl = process.env.REACT_APP_BASE_URL
+  console.log('Request URL:', `${baseUrl}Authentication/Login`);
+
   console.log('DATOS: ',data)
   try {
     const response = await axios.post(
-      'https://fakestoreapi.com/users', 
+      `${baseUrl}Authentication/Login`, 
       data, 
       {
-        headers: { 'Content-Type': 'application/json' }, 
+        headers: { 'Content-Type': 'application/json', 'Authorization': '' }, 
       }
     )
 
