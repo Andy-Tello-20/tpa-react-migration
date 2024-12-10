@@ -4,7 +4,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
 import './modal.css'
-const ReactBootstrapModal = ({ showModalRecovery,showModalUnlockUser, toggleModal, text ,textButton}) => {
+const ReactBootstrapModal = ({ formFooter,showModalRecovery,showModalUnlockUser, toggleModal, text ,textButton}) => {
 
 
  
@@ -31,6 +31,9 @@ const ReactBootstrapModal = ({ showModalRecovery,showModalUnlockUser, toggleModa
                         {textButton}
                     </Button>
                     
+                    {formFooter}
+
+
                 </Modal.Footer>
             </Modal>
         </>

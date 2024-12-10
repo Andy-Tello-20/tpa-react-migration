@@ -11,13 +11,14 @@ export const loginAuth = async (data) => {
       `${baseUrl}Authentication/Login`, 
       data, 
       {
-        headers: { 'Content-Type': 'application/json', 'Authorization': '' }, 
+        headers: { 'Content-Type': 'application/json' }, 
       }
     )
 
     return response.data
   } catch (error) {
     console.error('Service Error:', error)
+    console.error('error response:', error.response)
     throw error
   }
 }

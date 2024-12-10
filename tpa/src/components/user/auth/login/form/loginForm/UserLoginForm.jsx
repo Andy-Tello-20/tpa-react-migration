@@ -13,29 +13,40 @@ export const UserLoginForm = () => {
 
     const { handleSubmit, register, onSubmit, message } = useSubmitControler()
     const [showPassword, setShowPassword] = useState(true)
-   
+
 
     const [showModalRecovery, setshowModalRecovery] = useState(false);
     const [showModalUnlockUser, setshowModalUnlockUser] = useState(false);
 
 
-  
+
 
 
     //!👉 Función para cambiar el estado del modal
     const toggleModal = () => {
-      setshowModalRecovery(!showModalRecovery);
+        setshowModalRecovery(!showModalRecovery);
     };
 
 
     const toggleUnlockUser = () => {
-      setshowModalUnlockUser(!showModalUnlockUser);
+        setshowModalUnlockUser(!showModalUnlockUser);
     };
 
 
+    const formulario = (<form>
+        <div>
+            <label htmlFor="name">Nombre:</label>
+            <input type="text" id="name" name="name" />
+        </div>
+        <div>
+            <label htmlFor="email">Correo:</label>
+            <input type="email" id="email" name="email" />
+        </div>
+        <button type="submit">Enviar</button>
+    </form>);
 
 
-//!👉 Función mostrar la contraseña
+    //!👉 Función mostrar la contraseña
     const togleEye = () => {
         setShowPassword(!showPassword)
     };
@@ -51,7 +62,7 @@ export const UserLoginForm = () => {
                 <h1 className="title">Bienvenido</h1>
 
                 <div className="form-floating mb-3">
-                    <input {...register('username', { required: 'email is required' })} type="email" className="form-control" id="floatingInput" autoFocus autoComplete='userName' placeholder="Usuario"  />
+                    <input {...register('username', { required: 'email is required' })} type="email" className="form-control" id="floatingInput" autoFocus autoComplete='userName' placeholder="Usuario" />
                     <label htmlFor="floatingInput">Usuario</label>
                 </div>
 
@@ -90,10 +101,10 @@ export const UserLoginForm = () => {
                 {/* <Link to="#" className="link">Necesitas ayuda?</Link> */}
             </form>
 
-            <ReactBootstrapModal showModalRecovery={showModalRecovery} toggleModal={toggleModal} text={'Recuperar contraseña'} textButton={'Recuperar'}/>
+            <ReactBootstrapModal showModalRecovery={showModalRecovery} toggleModal={toggleModal} text={'Recuperar contraseña'} textButton={'Recuperar'} formFooter={formulario} />
 
-            <ReactBootstrapModal showModalUnlockUser={showModalUnlockUser} toggleModal={toggleUnlockUser} text={'Desbloquear usuario'} textButton={'Desbloquear'}/>
-         
+            <ReactBootstrapModal showModalUnlockUser={showModalUnlockUser} toggleModal={toggleUnlockUser} text={'Desbloquear usuario'} textButton={'Desbloquear'} />
+
         </div>
     )
 }
