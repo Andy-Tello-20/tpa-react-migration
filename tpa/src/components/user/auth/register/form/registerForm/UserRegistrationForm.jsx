@@ -241,17 +241,6 @@ export const UserRegistrationForm = () => {
                     <div className="text-start">
                         <div className="mb-3 mb3-className-where select-container ">
 
-
-
-                            {/* <div className="div-place">Donde te gustaría realizar la Fase presencial de la Formación
-                                TPA®?*</span>
-                            <select id="documentType" className="form-select " name="location" multiple="multiple">
-                                <option value="1">P. Sherman, 42 Wallaby Way, Sydney</option>
-                                <option value="2">Pizza Planet, 231 County Road, Richmond, VA</option>
-                                <option value="3">Stark Tower, 200 Park Avenue, New York, NY</option>
-                                <option value="4">Av. Siempre viva</option>
-                            </select> */}
-
                             <div className="div-place">Donde te gustaría realizar la Fase presencial de la Formación
                                 TPA®?*</div>
 

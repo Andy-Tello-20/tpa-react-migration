@@ -16,7 +16,7 @@ export class ApiService {
   
       const responses = await Promise.all(urls.map((url) => axios.get(url)))
 
-      console.log('Promises are: ', responses)
+      // console.log('Promises are: ', responses)
   
       return responses
     } catch (error) {

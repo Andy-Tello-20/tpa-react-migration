@@ -5,7 +5,7 @@ import './genericSelect.css'
 
 export const GenericSelect = ({ placeholder, multi = false, values, prop, name, closeMenu = true }) => {
 
-  console.log('values are: ', values, 'prop es: ', prop)
+  // console.log('values are: ', values, 'prop es: ', prop)
   const [selectedOption, setSelectedOption] = useState(null);
 
   let options
@@ -35,7 +35,7 @@ export const GenericSelect = ({ placeholder, multi = false, values, prop, name, 
       }
     });
 
-    console.log('options are:', options);
+    // console.log('options are:', options);
   }
 
 
