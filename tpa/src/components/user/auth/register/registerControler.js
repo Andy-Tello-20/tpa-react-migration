@@ -18,7 +18,7 @@ export const FetchData = async () => {
       }
 }
 
-export const SubmitData = () => {
+export const useSubmitData = () => {
 
     const [message, setMessage] = useState('')
     const { register, handleSubmit } = useForm()

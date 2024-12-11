@@ -3,7 +3,7 @@ import axios from 'axios';
 export class ApiService {
 
   static async getData() {
-    const baseUrl = process.env.REACT_APP_BASE_URL;
+    const baseUrl = process.env.REACT_APP_BASE_URL
   
     try {
       const urls = [
@@ -14,13 +14,13 @@ export class ApiService {
       ];
   
   
-      const responses = await Promise.all(urls.map((url) => axios.get(url)));
+      const responses = await Promise.all(urls.map((url) => axios.get(url)))
 
-      console.log('Promises are: ', responses);
+      console.log('Promises are: ', responses)
   
       return responses
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error('Error fetching data:', error)
       throw error
     }
   }

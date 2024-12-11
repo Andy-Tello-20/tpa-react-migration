@@ -4,11 +4,34 @@ import { CountrySelect } from '../../../../../common/CountrySelect/CountrySelect
 import { GenericSelect } from '../../../../../common/GenericSelect/GenericSelect'
 import { useGetData } from '../../../../../../hooks/useGetData'
 import { FetchData } from '../../registerControler'
+import logoSB from '../../../../../../assets/img/logo-colores-originales-sin-bajada.png'
 // import { GenericComponent } from '../../../../../common/GenericComponent/GenericComponent'
 
 export const UserRegistrationForm = () => {
 
     const { data } = useGetData(FetchData)
+
+    const YON = [
+        { option: 'Si' },
+        { option: 'No' }
+    ]
+
+
+    function generateYearsArray() {
+        const currentYear = new Date().getFullYear()
+        const startYear = 2017
+        const yearsArray = []
+
+        for (let year = startYear; year <= currentYear; year++) {
+            yearsArray.push({ year })
+        }
+
+        return yearsArray;
+    }
+
+
+    const years = generateYearsArray();
+    
 
     // console.log('data from useGetData: ',data)
 
@@ -22,7 +45,7 @@ export const UserRegistrationForm = () => {
 
 
                 <div className="logo-interest">
-                    <img src="../../../img/logo-colores-originales-sin-bajada.png" alt="logo" />
+                    <img src={logoSB} alt="logo" />
                 </div>
 
 
@@ -33,30 +56,25 @@ export const UserRegistrationForm = () => {
                     tus datos personales.</p>
 
                 <div className="first-question">
-                    <div className="container mt-5 container-mt-5 mt-5-height container-mw">
+                    <div className=" mt-5 container-mt-5 mt-5-height container-mw">
                         <div className="mb-3 mb3-className form-floating select-container ">
 
                             <div className="div-fq">¿Realizó anteriormente La Formación
                                 TPA®?</div>
-                            {/* <select id="realizoFormacion" className="form-select form-control-height">
-                                <option value="" disabled selected>¿Realizó anteriormente La Formación
-                                    TPA®?</option>
-                                <option value="no">No</option>
-                                <option value="si">Sí</option>
-                            </select> */}
 
-                            <GenericSelect  />
+
+                            <GenericSelect values={YON} prop={'option'} />
 
                         </div>
                     </div>
 
 
-                    <div className="container mt-5 container-mt-5 cont-year mt-5-height">
+                    <div className="mt-5 container-mt-5 cont-year mt-5-height">
                         <div className=" mb3-className-year select-container">
 
-                        <div className="div-year">Año en que realizaste la Formación TPA®</div>
+                            <div className="div-year">Año en que realizaste la Formación TPA®</div>
 
-                            <GenericSelect  />
+                            <GenericSelect values={years} prop={'year'}/>
 
                         </div>
                     </div>
@@ -89,14 +107,8 @@ export const UserRegistrationForm = () => {
 
                     <div className="dni">
                         <div className="form-floating selected1 select-container">
-                            {/* <select className="form-select form-control-height">
-                                <option value="" disabled selected>Tipo de Documento*</option>
-                                <option value="1">DNI</option>
-                                <option value="2">Pasaporte</option>
-                                <option value="3">UE</option>
-                            </select> */}
 
-                            <GenericSelect  values={data?.[1]?.data || []} prop={'description'}/>
+                            <GenericSelect placeholder={'Tipo de Documento'} values={data?.[1]?.data || []} prop={'description'} />
 
                         </div>
                         <div className="form-floating nro">
@@ -129,16 +141,11 @@ export const UserRegistrationForm = () => {
 
 
                     <div className="address-1-container">
-                        <div className="container mt-5-country mt-5">
+                        <div className=" mt-5-country mt-5">
 
                             <div className="mb-3 mb3-className-country select-container ">
-                                {/* <select id="country2" className="form-select">
-                                    <option value="" disabled selected>País</option>
-                                    <option value="+54" data-flag="ar">(+54)</option>
-                                    <option value="+1" data-flag="us">(+1)</option>
-                                    <option value="+44" data-flag="gb">(+44)</option>
-                                </select> */}
-                                <CountrySelect />
+
+                                <CountrySelect placeholder={'País'} values={data?.[0]?.data} />
                             </div>
 
                         </div>
@@ -166,13 +173,8 @@ export const UserRegistrationForm = () => {
                         <div className="container mt-5-country mt-5">
 
                             <div className="mb-3 mb3-className-country select-container">
-                                {/* <select id="country" className="form-select">
-                                    <option value="" disabled selected>País</option>
-                                    <option value="+54" data-flag="ar">(+54)</option>
-                                    <option value="+1" data-flag="us">(+1)</option>
-                                    <option value="+44" data-flag="gb">(+44)</option>
-                                </select> */}
-                                <CountrySelect />
+
+                                <CountrySelect placeholder={'País'} values={data?.[0]?.data} />
                             </div>
 
                         </div>
@@ -207,33 +209,19 @@ export const UserRegistrationForm = () => {
                     <div className="text-start">
                         <div className="mb-3 mb3-className-profession select-container ">
                             <div className="div-profesion">Profesión</div>
-                            {/* <select id="Profesion" className="form-select">
-                                <option value=""></option>
-                                <option value="1">Ingeniero civil</option>
-                                <option value="2">Diseñador gráfico</option>
-                                <option value="3">Economista financiero</option>
-                                <option value="4">Traductor/Intérprete de conferencias</option>
-                                <option value="5">Abogado de derechos humanos</option>
-                            </select> */}
-                            <GenericSelect values={data?.[2]?.data || []} prop={'name'}/>
+
+                            <GenericSelect placeholder={'Seleccione una profesión'} values={data?.[2]?.data || []} prop={'name'} />
                         </div>
 
-                        <small className="form-text text-muted">Debes ser profesional de la salud y/o movimiento</small>
+                        <small className="form-text text-muted">Debes ser profesional de la salud y/o del movimiento, como pilates, yoga, educación física, para realizar la formación TPA®</small>
                     </div>
 
 
                     <div className="mb-3 mb3-className-profession select-container ">
 
                         <div className="div-OProfesion">Otra Profesión</div>
-                        {/* <select id="OtraProfesion" className="form-select">
-                            <option value=""></option>
-                            <option value="1">Ingeniero civil</option>
-                            <option value="2">Diseñador gráfico</option>
-                            <option value="3">Economista financiero</option>
-                            <option value="4">Traductor/Intérprete de conferencias</option>
-                            <option value="5">Abogado de derechos humanos</option>
-                        </select> */}
-                         <GenericSelect values={data?.[2]?.data || []} prop={'name'}/>
+
+                        <GenericSelect placeholder={'Seleccione otra profesión'} values={data?.[2]?.data || []} prop={'name'} />
 
                     </div>
 
@@ -267,7 +255,7 @@ export const UserRegistrationForm = () => {
                             <div className="div-place">Donde te gustaría realizar la Fase presencial de la Formación
                                 TPA®?*</div>
 
-                            <GenericSelect multi={true} values={data?.[3]?.data || []} prop={'description'}/>
+                            <GenericSelect placeholder={'Elija una o mas ubicaciones'} multi={true} values={data?.[3]?.data || []} prop={'description'} name={'name'} closeMenu={false}/>
                         </div>
 
                         <a className="link-info" href="/">Información sobre la Fase Presencial</a>
@@ -282,7 +270,7 @@ export const UserRegistrationForm = () => {
                     <small className="form-text text-muted small-cancelar"><a href="/">Cancelar</a></small>
 
                 </div>
-{/* 
+                {/* 
                 <GenericComponent/> */}
 
 

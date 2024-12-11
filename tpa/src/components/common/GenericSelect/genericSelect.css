@@ -14,8 +14,13 @@ div#react-select-3-placeholder  {
     height: 56px;
 }
 
-.css-13cymwt-control , .css-1dyz3mf{
+.css-13cymwt-control{
     height: 56px !important;
+}
+/* 
+Multiselect */
+.css-1dyz3mf {
+    min-height: 56px !important;
 }
 
 .css-1p3m7a8-multiValue {

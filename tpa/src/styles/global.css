@@ -210,7 +210,7 @@
 
     .nro,
     .selected1 {
-        width: 100%;
+        width: 100% !important;
     }
 
     .form-interest {
