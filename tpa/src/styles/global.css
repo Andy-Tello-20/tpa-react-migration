@@ -190,10 +190,10 @@
     /* ---Formulario Interes--- */
     .form-interest,
     .form-inscripcion {
-        width: 100%;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        border-radius: 0px;
+        width: 100% !important;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        border-radius: 0px !important;
     }
 
 

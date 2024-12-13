@@ -21,16 +21,16 @@ export const FetchData = async () => {
 export const useSubmitData = () => {
 
     const [message, setMessage] = useState('')
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit,setValue } = useForm()
 
     const onSubmit = async (data) => {
         try {
-            console.log(data)
+            console.log('data controler es: ',data)
 
-            const result = await ApiService.postData(data)
+            // const result = await ApiService.postData(data)
 
-            console.log('resultado ', result)
-            setMessage('Datos Enviados')
+            // console.log('resultado ', result)
+            // setMessage('Datos Enviados')
 
         } catch (error) {
             console.error(error);
@@ -38,7 +38,7 @@ export const useSubmitData = () => {
         }
     }
 
-    return { register, handleSubmit, onSubmit, message }
+    return { register, handleSubmit, onSubmit,setValue, message }
 
 }
 
