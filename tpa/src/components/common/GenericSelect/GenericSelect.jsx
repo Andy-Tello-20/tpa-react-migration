@@ -23,10 +23,19 @@ export const GenericSelect = React.forwardRef(({
   }, [selectedOption, onSelectChange])
 
   const handleChange = (selectedOption) => {
-    setSelectedOption(selectedOption)
-    console.log('SelectedOption es: ', selectedOption)
-    setValue(name, selectedOption?.value || null)
+    setSelectedOption(selectedOption);
+
+    //👉 Verificamos si es un array de objetos
+    if (Array.isArray(selectedOption)) {
+      const selectedValues = selectedOption.map(i => i.value)
+      setValue(name, selectedValues)
+    } else {
+      // Para valores únicos (o null), usamos directamente el valor
+      setValue(name, selectedOption?.value || null)
+    }
+
   };
+
 
   let options
 

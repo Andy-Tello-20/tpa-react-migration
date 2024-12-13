@@ -13,8 +13,8 @@ export const UserRegistrationForm = () => {
     const { data } = useGetData(FetchData)
 
     const yesOrNot = [
-        { name: 'Si', description:''},
-        { name: 'No', description:''}
+        { name: 'Si', description: '' },
+        { name: 'No', description: '' }
     ]
 
 
@@ -24,7 +24,7 @@ export const UserRegistrationForm = () => {
         const yearsArray = []
 
         for (let year = startYear; year <= currentYear; year++) {
-            yearsArray.push({ name: year , description:'' })
+            yearsArray.push({ name: year, description: '' })
         }
 
         return yearsArray;
@@ -39,7 +39,7 @@ export const UserRegistrationForm = () => {
 
     const handleSelectChange = (selectedOption) => {
         setSelectedValue(selectedOption)
-        setValue('hasTakenCourse', selectedOption)
+
     };
 
     // console.log('data from useGetData: ',data)
@@ -74,8 +74,9 @@ export const UserRegistrationForm = () => {
 
                             <GenericSelect
                                 values={yesOrNot}
+                                name={'formation'}
                                 onSelectChange={handleSelectChange}
-                                {...register('tiene formacion?', { required: false })}
+                                {...register('formation?', { required: false })}
                                 setValue={setValue} />
 
                         </div>
@@ -96,8 +97,8 @@ export const UserRegistrationForm = () => {
                                     // onSelectChange={(selectedOption) => setValue('year', selectedOption.year)}
                                     {...register('year', { required: false })}
                                     setValue={setValue}
-                    
-                                    />
+
+                                />
 
                             </div>
                         </div>
@@ -121,32 +122,39 @@ export const UserRegistrationForm = () => {
                     <div className="form-floating ">
 
                         <input type="text" className="form-control form-control-height" id="floatingInputNombre"
-                            placeholder="Nombre" />
+                            placeholder="Nombre"
+                            name={'name'}
+                            {...register('name', { required: false })}
+                        />
                         <label htmlFor="floatingInputNombre">Nombre/s</label>
 
                     </div>
 
                     <div className="form-floating">
                         <input type="text" className="form-control form-control-height" id="floatingLastName"
-                            placeholder="Apellido" />
+                            name={'lastName'}
+                            {...register('lastName', { required: false })} />
+
                         <label htmlFor="floatingLastName">Apellido/s</label>
                     </div>
 
                     <div className="dni">
                         <div className="form-floating selected1 select-container">
 
-                            <GenericSelect 
-                            name={'DNI'}
-                            placeholder={'Tipo de Documento'} 
-                            values={data?.[1]?.data || []} 
-                            prop={'description'}
-                            setValue={setValue}
-                            {...register('DNI', { required: false })}  />
+                            <GenericSelect
+                                name={'DNI'}
+                                placeholder={'Tipo de Documento'}
+                                values={data?.[1]?.data || []}
+                                prop={'description'}
+                                setValue={setValue}
+                                {...register('DNI', { required: false })} />
 
                         </div>
                         <div className="form-floating nro">
                             <input type="text" className="form-control form-control-height" id="floatingNro"
-                                placeholder="Nro" />
+                                placeholder="Nro"
+                                name={'dniNumber'}
+                                {...register('dniNumber', { required: false })} />
                             <label htmlFor="floatingNro">Nro de Documento</label>
                         </div>
                     </div>
@@ -166,7 +174,9 @@ export const UserRegistrationForm = () => {
 
                         <div className="form-floating flex-grow-1">
                             <input type="text" className="form-control form-control-height" name="code1"
-                                placeholder="Code 1" />
+                                placeholder="Code 1"
+                                {...register('code1', { required: false })} />
+
                             <label htmlFor="code1">Email</label>
                         </div>
 
@@ -178,7 +188,11 @@ export const UserRegistrationForm = () => {
 
                             <div className="mb-3 mb3-className-country select-container ">
 
-                                <CountrySelect placeholder={'País'} values={data?.[0]?.data} />
+                                <CountrySelect placeholder={'País'}
+                                    values={data?.[0]?.data}
+                                    setValue={setValue}
+                                    name={'pais1'}
+                                    {...register('pais1', { required: false })} />
                             </div>
 
                         </div>
@@ -193,9 +207,6 @@ export const UserRegistrationForm = () => {
                                 placeholder="Celular" />
                             <label htmlFor="autoSizingInputGroup1">Celular</label>
 
-                            {/* <!--
-                                <small className="form-text text-muted small-className">Ingrese 10 dígitos sin el 0 y sin el
-                                    15</small> --> */}
                         </div>
 
                     </div>
@@ -207,7 +218,11 @@ export const UserRegistrationForm = () => {
 
                             <div className="mb-3 mb3-className-country select-container">
 
-                                <CountrySelect placeholder={'País'} values={data?.[0]?.data} />
+                                <CountrySelect placeholder={'País'}
+                                    values={data?.[0]?.data}
+                                    setValue={setValue}
+                                    name={'pais2'}
+                                    {...register('pais2', { required: false })} />
                             </div>
 
                         </div>
@@ -218,7 +233,9 @@ export const UserRegistrationForm = () => {
 
 
                             <input type="text" className="form-control form-control-height" id="autoSizingInputGroup2"
-                                placeholder="Celular alternativo" />
+                                placeholder="Celular alternativo"
+
+                            />
 
                             <label htmlFor="autoSizingInputGroup2">Celular alternativo</label>
 
@@ -243,7 +260,7 @@ export const UserRegistrationForm = () => {
                         <div className="mb-3 mb3-className-profession select-container ">
                             <div className="div-profesion">Profesión</div>
 
-                            <GenericSelect placeholder={'Seleccione una profesión'} values={data?.[2]?.data || []} name={'profesion'} setValue={setValue}/>
+                            <GenericSelect placeholder={'Seleccione una profesión'} values={data?.[2]?.data || []} name={'profesion'} setValue={setValue} />
                         </div>
 
                         <small className="form-text text-muted">Debes ser profesional de la salud y/o del movimiento, como pilates, yoga, educación física, para realizar la formación TPA®</small>
@@ -273,12 +290,12 @@ export const UserRegistrationForm = () => {
                                 TPA®?*</div>
 
                             <GenericSelect placeholder={'Elija una o mas ubicaciones'}
-                             multi={true}
-                              values={data?.[3]?.data || []}
-                               name={'where'}
+                                multi={true}
+                                values={data?.[3]?.data || []}
+                                name={'where'}
                                 closeMenu={false}
                                 {...register('where', { required: false })}
-                                 setValue={setValue}/>
+                                setValue={setValue} />
                         </div>
 
                         <a className="link-info" href="/">Información sobre la Fase Presencial</a>
